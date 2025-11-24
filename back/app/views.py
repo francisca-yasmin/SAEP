@@ -4,9 +4,12 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Usuario, Produtos, Movimentacao
-from .serializers import UsuarioSerializer, ProdutosSerializer, MovimentacaoSerializer
+from .serializers import UsuarioSerializer, ProdutosSerializer, MovimentacaoSerializer, LoginSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.views import TokenObtainPairView
 
+class LoginView(TokenObtainPairView):
+    serializer_class = LoginSerializer
 
 # CRUD -> Usuario 
 class UsuarioListCreate(ListCreateAPIView):
@@ -61,8 +64,8 @@ class ProdutosRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
         }, status=status.HTTP_200_OK)
 
 
-# CONSULTAR, ATUALIZAR e EXCLUIR movimentação
-class MovimentacaoRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
+# listar os dados de movimentação
+class MovimentacaoListCreate(ListCreateAPIView):
     queryset = Movimentacao.objects.all()
     serializer_class = MovimentacaoSerializer
     permission_classes = [IsAuthenticated]

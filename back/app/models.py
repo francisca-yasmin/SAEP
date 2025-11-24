@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 #tabela de usuario
 class Usuario(AbstractUser):
     nome = models.CharField(max_length=100)
-    login = models.DateField(max_length=20)
+    login = models.DateField(max_length=20, blank=True, null=True)
     senha = models.CharField(max_length=20)
 
     #campos obrigatorios para preencher

@@ -2,18 +2,21 @@ from django.urls import path
 from .views import (
     UsuarioListCreate, UsuarioRetrieveUpdateDestroy,
     ProdutosListCreate, ProdutosRetrieveUpdateDestroy,
-    MovimentacaoRetrieveUpdateDestroy
+    MovimentacaoListCreate, LoginView
 )
 
 urlpatterns = [
+    #login
+    path('login/', LoginView.as_view()),
+
     # Usuários
-    path('usuarios/', UsuarioListCreate.as_view(), name='usuarios-list-create'),
-    path('usuarios/<int:pk>/', UsuarioRetrieveUpdateDestroy.as_view(), name='usuarios-detail'),
+    path('usuarios/', UsuarioListCreate.as_view()),
+    path('usuarios/<int:pk>/', UsuarioRetrieveUpdateDestroy.as_view()),
 
     # Produtos
-    path('produtos/', ProdutosListCreate.as_view(), name='produtos-list-create'),
-    path('produtos/<int:pk>/', ProdutosRetrieveUpdateDestroy.as_view(), name='produtos-detail'),
+    path('produtos/', ProdutosListCreate.as_view()),
+    path('produtos/<int:pk>/', ProdutosRetrieveUpdateDestroy.as_view()),
 
     # Movimentações
-    path('movimentacoes/<int:pk>/', MovimentacaoRetrieveUpdateDestroy.as_view(), name='movimentacoes-detail'),
+    path('movimentacoes/<int:pk>/', MovimentacaoListCreate.as_view()),
 ]
