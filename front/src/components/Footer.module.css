@@ -1,0 +1,14 @@
+
+.p{
+    background-color: black;
+    padding: 4px;
+}
+
+p{
+    color: #FFFF;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins';
+
+}

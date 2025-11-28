@@ -1,0 +1,49 @@
+.conteiner {
+  background-color: #def5ff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.conteiner ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link li {
+  margin: 0 15px;
+}
+
+.link:hover {
+  background-color: #80d5fa;
+}
+
+.link:active {
+  background-color: #93ddfd;
+}
+
+.linkLogout {
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+.linkLogout:hover {
+  background-color: #d9534f;
+  border-radius: 5px;
+}
